@@ -296,3 +296,56 @@ input:focus, select:focus {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+/* Estilos para o botão do Mercado Livre */
+/* Estilos melhorados para o botão do Mercado Livre */
+.mercado-livre-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #FFE600 0%, #FFD500 100%);
+    color: #2D3277;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.mercado-livre-btn:hover {
+    background: linear-gradient(135deg, #FFD500 0%, #FFE600 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    color: #2D3277;
+}
+
+.mercado-livre-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.ml-logo {
+    height: 24px;
+    width: auto;
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+}
+
+/* Adicionando um pequeno destaque para o cupom */
+.coupon-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #FFE600 0%, #FFD500 100%);
+    color: #2D3277;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,214,0,0.3);
+}

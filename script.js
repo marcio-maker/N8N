@@ -121,7 +121,7 @@ const productDatabase = {
         name: "Shampoo Purificante para Cabelos Lisos",
         description: "Controla a oleosidade sem ressecar, perfeito para cabelos lisos que ficam oleosos rapidamente.",
         image: "https://i.pinimg.com/736x/b6/9d/60/b69d600cc9b8529d179188b44466089b.jpg",
-        link: "https://exemplo.com/produto1",
+        link: "https://mercadolivre.com.br/afiliado/shampoo-purificante", // Link de afiliado
         price: "R$ 59,90",
         coupon: "LISO10",
         benefits: ["Controle de oleosidade", "Fórmula vegana", "Sem sulfatos"]
@@ -130,7 +130,7 @@ const productDatabase = {
         name: "Máscara de Hidratação Intensa",
         description: "Hidratação profunda para cabelos lisos ressecados.",
         image: "https://i.pinimg.com/736x/22/e8/b3/22e8b3b7bde73885e070cc5dbbb37549.jpg",
-        link: "https://exemplo.com/produto2",
+        link: "https://mercadolivre.com.br/afiliado/mascara-hidratacao", // Link de afiliado
         price: "R$ 79,90",
         coupon: "HIDRATA15",
         benefits: ["Hidratação profunda", "Repara pontas duplas", "Fórmula nutritiva"]
@@ -139,7 +139,7 @@ const productDatabase = {
         name: "Kit Cuidados Básicos",
         description: "Indicado para todos os tipos de cabelo.",
         image: "https://i.pinimg.com/1200x/19/29/0d/19290dfa0438f6d5f73d259d7f235ec3.jpg",
-        link: "https://exemplo.com/produto2",
+        link: "https://mercadolivre.com.br/afiliado/kit-cuidados", // Link de afiliado
         price: "R$ 69,90",
         coupon: "CABELO5",
         benefits: ["Limpeza suave", "Uso diário", "Para todos os tipos"]
@@ -173,7 +173,7 @@ ${product.description}
 💲 *Preço:* ${product.price}
 🏷️ *Cupom de Desconto:* ${product.coupon}
 
-🔗 *Compre agora:* ${product.link}`;
+🔗 *Compre agora no Mercado Livre:* ${product.link}`;
 
     const htmlRecommendation = `
         <h3>Sua Recomendação</h3>
@@ -184,7 +184,10 @@ ${product.description}
             <ul>${benefitsList}</ul>
             <p><strong>${product.price}</strong></p>
             <div class="coupon-badge">Cupom: ${product.coupon}</div>
-            <a href="${product.link}" class="btn" target="_blank">Ver Produto</a>
+            <a href="${product.link}" class="btn mercado-livre-btn" target="_blank">
+                <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__small@2x.png" alt="Mercado Livre" class="ml-logo">
+                Comprar no Mercado Livre
+            </a>
         </div>
         <a href="https://wa.me/${data.whatsapp}?text=${encodeURIComponent(whatsappMessage)}" class="whatsapp-link" target="_blank">📩 Abrir no WhatsApp</a>
     `;
