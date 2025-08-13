@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quiz personalizado para recomendar os melhores produtos para seu tipo de cabelo e necessidades específicas">
+    <title>Quiz Capilar - Recomendação Personalizada</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Introdução com animação -->
+    <div id="intro-container">
+        <div class="intro-content">
+            <h1 class="intro-title">Descubra Seu Cabelo Perfeito</h1>
+            <p class="intro-subtitle">Responda nosso quiz e receba recomendações personalizadas</p>
+            <canvas id="intro-canvas"></canvas>
+            <button class="intro-button" id="startQuizBtn">Começar Quiz</button>
+        </div>
+    </div>
+
+    <!-- Quiz Container (inicialmente oculto) -->
+    <div class="quiz-container" style="display: none;">
+        <h1>Quiz do Cabelo Perfeito</h1>
+
+        <!-- Barra de progresso -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Formulário principal -->
+        <form id="quizForm">
+            <!-- Passo 1 -->
+            <div class="quiz-step active" id="step1">
+                <label for="nome">Qual é o seu nome?</label>
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome completo" minlength="3" />
+                
+                <label for="whatsapp">Seu WhatsApp (com DDI e DDD):</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required 
+                       placeholder="5511999999999" pattern="[0-9]{11,13}" 
+                       title="Digite o número com DDI (55) e DDD sem espaços ou caracteres especiais" />
+                <p class="text-muted">Exemplo: 5511999999999 (DDI 55 + DDD 11 + número)</p>
+                
+                <button type="button" class="btn" onclick="nextStep(1)">Próximo</button>
+            </div>
+
+            <!-- Passo 2 -->
+            <div class="quiz-step" id="step2">
+                <label for="tipo_cabelo">Qual seu tipo de cabelo?</label>
+                <select id="tipo_cabelo" required>
+                    <option value="">Selecione...</option>
+                    <option value="liso">Liso</option>
+                    <option value="ondulado">Ondulado</option>
+                    <option value="cacheado">Cacheado</option>
+                    <option value="crespo">Crespo</option>
+                </select>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep()">Voltar</button>
+                    <button type="button" class="btn" onclick="nextStep(2)">Próximo</button>
+                </div>
+            </div>
+
+            <!-- Passo 3 -->
+            <div class="quiz-step" id="step3">
+                <label for="problema_cabelo">Qual o maior problema com seu cabelo?</label>
+                <select id="problema_cabelo" required>
+                    <option value="">Selecione...</option>
+                    <option value="oleosidade">Oleosidade</option>
+                    <option value="ressecamento">Ressecamento</option>
+                    <option value="queda">Queda</option>
+                    <option value="frizz">Frizz</option>
+                    <option value="danificado">Danificado por química</option>
+                    <option value="sem_volume">Sem volume</option>
+                    <option value="pontas_duplas">Pontas duplas</option>
+                </select>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep()">Voltar</button>
+                    <button type="button" class="btn" onclick="nextStep(3)">Próximo</button>
+                </div>
+            </div>
+
+            <!-- Passo 4 -->
+            <div class="quiz-step" id="step4">
+                <label for="objetivo">Qual seu principal objetivo com os cabelos?</label>
+                <select id="objetivo" required>
+                    <option value="">Selecione...</option>
+                    <option value="hidratacao">Hidratação</option>
+                    <option value="nutricao">Nutrição</option>
+                    <option value="reconstrucao">Reconstrução</option>
+                    <option value="crescimento">Crescimento</option>
+                    <option value="definir_cachos">Definir cachos</option>
+                    <option value="reduzir_frizz">Reduzir frizz</option>
+                    <option value="proteger_cor">Proteger a cor (para cabelos coloridos)</option>
+                </select>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="prevStep()">Voltar</button>
+                    <button type="submit" class="btn" id="submitBtn">Receber Recomendação</button>
+                </div>
+            </div>
+
+            <!-- Mensagens -->
+            <div class="message hidden" id="message"></div>
+            <div id="recommendation" class="recommendation hidden"></div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="intro.js"></script>
+</body>
+</html>
