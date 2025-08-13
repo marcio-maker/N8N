@@ -129,7 +129,7 @@ const productDatabase = {
     "liso-ressecamento": {
         name: "Máscara de Hidratação Intensa",
         description: "Hidratação profunda para cabelos lisos ressecados.",
-        image: "https://example.com/product2.jpg",
+        image: "https://i.pinimg.com/736x/22/e8/b3/22e8b3b7bde73885e070cc5dbbb37549.jpg",
         link: "https://exemplo.com/produto2",
         price: "R$ 79,90",
         coupon: "HIDRATA15",

@@ -186,7 +186,24 @@ input:focus, select:focus {
 .intro-title {
     font-size: 3rem;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    background: linear-gradient(45deg, #9d4edd, #7b2cbf, #6b1cba);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Texto com gradiente por padrão */
+    text-shadow: 
+        0 0 5px rgba(202, 178, 255, 0.5),
+        0 0 10px rgba(202, 178, 255, 0.3);
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease; /* Transição suave */
+    cursor: pointer;
+}
+
+/* Efeito hover: texto branco puro */
+.intro-title:hover {
+    -webkit-text-fill-color: white; /* Sobrescreve o gradiente */
+    text-shadow: 
+        0 0 8px rgba(255, 255, 255, 0.7); /* Brilho branco */
 }
 
 .intro-subtitle {
